@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.movieProject.dao.MemberDao">
+	<select id="selectMemberInfo" resultType="mem">
+		SELECT * FROM MEMBERS WHERE MID = #{id}
+	</select>
+	<insert id="insertMember_kakao">
+		INSERT INTO MEMBERS(MID,MPW,MNAME,MEMAIL,MDATE,MPROFILE,MSTATE)
+		VALUES(#{mid}, 'kakaoAccount', #{mname}, #{memail}, SYSDATE, #{mprofile}, 'YK')
+	</insert>
+	<insert id="registMember">
+		INSERT INTO MEMBERS(MID,MPW,MNAME,MEMAIL,MDATE,MPROFILE,MSTATE)
+		VALUES(#{mid}, #{mpw}, #{mname}, #{memail}, SYSDATE, #{mprofile}, 'YC')
+	</insert>
+	<select id="getLoginResult" resultType="mem">
+		SELECT * FROM MEMBERS WHERE MID = #{userId} AND MPW = #{userPw}
+	</select>
+</mapper>
