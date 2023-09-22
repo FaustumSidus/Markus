@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.movieProject.dto.Movie" alias="mv"/>
+		<typeAlias type="com.movieProject.dto.Member" alias="mem"/>
+		<typeAlias type="com.movieProject.dto.Theater" alias="th"/>
+		<typeAlias type="com.movieProject.dto.Schedule" alias="sc"/>
+		<typeAlias type="com.movieProject.dto.Reserve" alias="re"/>
+		<typeAlias type="com.movieProject.dto.Review" alias="rV"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mapper/AdminMapper.xml"></mapper>
+		<mapper resource="mapper/MovieMapper.xml"></mapper>
+		<mapper resource="mapper/MemberMapper.xml"></mapper>
+	</mappers>
+</configuration>
